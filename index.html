@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Web Page - JavaScript Assignment</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header with theme toggle -->
+        <header>
+            <h1>🧠 Interactive Web Page</h1>
+            <button id="theme-toggle" class="theme-btn">🌙 Dark Mode</button>
+        </header>
+
+        <!-- Part 1: Event Handling Demo -->
+        <section class="event-demo">
+            <h2>🎉 Event Handling Demo</h2>
+            <div class="demo-buttons">
+                <button id="click-btn" class="demo-btn">Click Me!</button>
+                <button id="hover-btn" class="demo-btn">Hover Over Me</button>
+                <input type="text" id="keyboard-input" placeholder="Type something here...">
+            </div>
+            <div id="event-output" class="output-box">
+                <p>Event messages will appear here...</p>
+            </div>
+        </section>
+
+        <!-- Part 2: Interactive Elements -->
+        <section class="interactive-elements">
+            <h2>🎮 Interactive Features</h2>
+            
+            <!-- Counter Game -->
+            <div class="feature-box">
+                <h3>Counter Game</h3>
+                <div class="counter-display">
+                    <span id="counter-value">0</span>
+                </div>
+                <div class="counter-controls">
+                    <button id="decrement-btn" class="counter-btn">-</button>
+                    <button id="reset-btn" class="counter-btn">Reset</button>
+                    <button id="increment-btn" class="counter-btn">+</button>
+                </div>
+            </div>
+
+            <!-- FAQ Section -->
+            <div class="feature-box">
+                <h3>Collapsible FAQ</h3>
+                <div class="faq-item">
+                    <button class="faq-question">What is JavaScript? <span class="faq-icon">+</span></button>
+                    <div class="faq-answer">
+                        <p>JavaScript is a programming language that enables interactive web pages and is an essential part of web applications.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">How do event listeners work? <span class="faq-icon">+</span></button>
+                    <div class="faq-answer">
+                        <p>Event listeners are functions that wait for specific events (like clicks or key presses) to occur and then execute code in response.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">What is DOM manipulation? <span class="faq-icon">+</span></button>
+                    <div class="faq-answer">
+                        <p>DOM manipulation refers to changing the structure, style, or content of a web page using JavaScript after it has loaded.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tabbed Interface -->
+            <div class="feature-box">
+                <h3>Tabbed Interface</h3>
+                <div class="tab-container">
+                    <div class="tab-buttons">
+                        <button class="tab-btn active" data-tab="tab1">About</button>
+                        <button class="tab-btn" data-tab="tab2">Skills</button>
+                        <button class="tab-btn" data-tab="tab3">Contact</button>
+                    </div>
+                    <div class="tab-content">
+                        <div id="tab1" class="tab-panel active">
+                            <h4>About Me</h4>
+                            <p>I'm learning JavaScript and building interactive web pages. This assignment helps me understand event handling and DOM manipulation.</p>
+                        </div>
+                        <div id="tab2" class="tab-panel">
+                            <h4>My Skills</h4>
+                            <ul>
+                                <li>HTML & CSS</li>
+                                <li>JavaScript (learning)</li>
+                                <li>Event Handling</li>
+                                <li>Form Validation</li>
+                            </ul>
+                        </div>
+                        <div id="tab3" class="tab-panel">
+                            <h4>Contact Info</h4>
+                            <p>Feel free to reach out through the form below!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Part 3: Form Validation -->
+        <section class="form-section">
+            <h2>📋 Contact Form with Validation</h2>
+            <form id="contact-form" class="contact-form">
+                <div class="form-group">
+                    <label for="name">Full Name *</label>
+                    <input type="text" id="name" name="name" required>
+                    <span class="error-message" id="name-error"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" required>
+                    <span class="error-message" id="email-error"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone">
+                    <span class="error-message" id="phone-error"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password *</label>
+                    <input type="password" id="password" name="password" required>
+                    <span class="error-message" id="password-error"></span>
+                    <div class="password-requirements">
+                        <small>Password must be at least 8 characters long and contain uppercase, lowercase, number, and special character.</small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="confirm-password">Confirm Password *</label>
+                    <input type="password" id="confirm-password" name="confirm-password" required>
+                    <span class="error-message" id="confirm-password-error"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="4" placeholder="Tell us about yourself..."></textarea>
+                    <span class="error-message" id="message-error"></span>
+                </div>
+
+                <div class="form-group checkbox-group">
+                    <label>
+                        <input type="checkbox" id="terms" name="terms" required>
+                        I agree to the terms and conditions *
+                    </label>
+                    <span class="error-message" id="terms-error"></span>
+                </div>
+
+                <button type="submit" class="submit-btn">Submit Form</button>
+            </form>
+
+            <div id="form-success" class="success-message" style="display: none;">
+                <h3>✅ Form submitted successfully!</h3>
+                <p>Thank you for your submission. We'll get back to you soon.</p>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

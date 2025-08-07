@@ -1,0 +1,539 @@
+/* ========================================
+   GLOBAL STYLES AND THEME VARIABLES
+   ======================================== */
+
+:root {
+    /* Light theme colors */
+    --bg-color: #ffffff;
+    --text-color: #333333;
+    --primary-color: #007bff;
+    --secondary-color: #6c757d;
+    --success-color: #28a745;
+    --error-color: #dc3545;
+    --warning-color: #ffc107;
+    --border-color: #dee2e6;
+    --card-bg: #f8f9fa;
+    --input-bg: #ffffff;
+    --shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] {
+    /* Dark theme colors */
+    --bg-color: #1a1a1a;
+    --text-color: #e0e0e0;
+    --primary-color: #4dabf7;
+    --secondary-color: #868e96;
+    --success-color: #51cf66;
+    --error-color: #ff6b6b;
+    --warning-color: #ffd43b;
+    --border-color: #495057;
+    --card-bg: #2d2d2d;
+    --input-bg: #343a40;
+    --shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* ========================================
+   HEADER STYLES
+   ======================================== */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+    padding: 20px 0;
+    border-bottom: 2px solid var(--border-color);
+}
+
+header h1 {
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.theme-btn {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow);
+}
+
+.theme-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+}
+
+/* ========================================
+   SECTION STYLES
+   ======================================== */
+
+section {
+    margin-bottom: 50px;
+    padding: 30px;
+    background: var(--card-bg);
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    transition: background-color 0.3s ease;
+}
+
+section h2 {
+    color: var(--primary-color);
+    margin-bottom: 25px;
+    font-size: 2rem;
+    text-align: center;
+}
+
+/* ========================================
+   EVENT DEMO STYLES
+   ======================================== */
+
+.demo-buttons {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.demo-btn {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.demo-btn:hover {
+    background: var(--secondary-color);
+    transform: scale(1.05);
+}
+
+#keyboard-input {
+    padding: 12px 15px;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1rem;
+    background: var(--input-bg);
+    color: var(--text-color);
+    transition: border-color 0.3s ease;
+}
+
+#keyboard-input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.output-box {
+    background: var(--input-bg);
+    border: 2px solid var(--border-color);
+    border-radius: 10px;
+    padding: 20px;
+    min-height: 150px;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.output-box p {
+    margin-bottom: 10px;
+    padding: 8px 12px;
+    background: var(--primary-color);
+    color: white;
+    border-radius: 5px;
+    animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* ========================================
+   INTERACTIVE FEATURES STYLES
+   ======================================== */
+
+.interactive-elements {
+    display: grid;
+    gap: 30px;
+}
+
+.feature-box {
+    background: var(--input-bg);
+    padding: 25px;
+    border-radius: 12px;
+    border: 2px solid var(--border-color);
+    transition: all 0.3s ease;
+}
+
+.feature-box:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+.feature-box h3 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+/* Counter Styles */
+.counter-display {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#counter-value {
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--text-color);
+    transition: color 0.3s ease;
+}
+
+#counter-value.positive {
+    color: var(--success-color);
+}
+
+#counter-value.negative {
+    color: var(--error-color);
+}
+
+.counter-controls {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.counter-btn {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    min-width: 60px;
+}
+
+.counter-btn:hover {
+    background: var(--secondary-color);
+    transform: scale(1.1);
+}
+
+/* FAQ Styles */
+.faq-item {
+    margin-bottom: 15px;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.faq-question {
+    width: 100%;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 15px 20px;
+    text-align: left;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.faq-question:hover {
+    background: var(--secondary-color);
+}
+
+.faq-icon {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    background: var(--input-bg);
+}
+
+.faq-item.active .faq-answer {
+    max-height: 200px;
+}
+
+.faq-answer p {
+    padding: 20px;
+    margin: 0;
+}
+
+/* Tab Styles */
+.tab-container {
+    width: 100%;
+}
+
+.tab-buttons {
+    display: flex;
+    border-bottom: 2px solid var(--border-color);
+    margin-bottom: 20px;
+}
+
+.tab-btn {
+    background: transparent;
+    border: none;
+    padding: 15px 25px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--secondary-color);
+    border-bottom: 3px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.tab-btn:hover {
+    color: var(--primary-color);
+}
+
+.tab-btn.active {
+    color: var(--primary-color);
+    border-bottom-color: var(--primary-color);
+}
+
+.tab-panel {
+    display: none;
+    padding: 20px;
+    background: var(--input-bg);
+    border-radius: 8px;
+    animation: fadeIn 0.3s ease;
+}
+
+.tab-panel.active {
+    display: block;
+}
+
+.tab-panel h4 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+.tab-panel ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.tab-panel li {
+    padding: 8px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.tab-panel li:before {
+    content: "✓ ";
+    color: var(--success-color);
+    font-weight: bold;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* ========================================
+   FORM STYLES
+   ======================================== */
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1rem;
+    background: var(--input-bg);
+    color: var(--text-color);
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+}
+
+.form-group.error input,
+.form-group.error textarea {
+    border-color: var(--error-color);
+}
+
+.error-message {
+    display: none;
+    color: var(--error-color);
+    font-size: 0.9rem;
+    margin-top: 5px;
+    font-weight: 500;
+}
+
+.password-requirements {
+    margin-top: 5px;
+    color: var(--secondary-color);
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.checkbox-group input[type="checkbox"] {
+    width: auto;
+    margin: 0;
+}
+
+.submit-btn {
+    width: 100%;
+    background: var(--success-color);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+}
+
+.submit-btn:hover {
+    background: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+}
+
+.success-message {
+    text-align: center;
+    padding: 30px;
+    background: var(--success-color);
+    color: white;
+    border-radius: 12px;
+    animation: slideIn 0.5s ease;
+}
+
+.success-message h3 {
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+    
+    header {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+    
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    .demo-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .counter-controls {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .tab-buttons {
+        flex-direction: column;
+    }
+    
+    .tab-btn {
+        border-bottom: none;
+        border-right: 3px solid transparent;
+    }
+    
+    .tab-btn.active {
+        border-right-color: var(--primary-color);
+        border-bottom-color: transparent;
+    }
+}
+
+@media (max-width: 480px) {
+    section {
+        padding: 20px 15px;
+    }
+    
+    .feature-box {
+        padding: 15px;
+    }
+    
+    #counter-value {
+        font-size: 2rem;
+    }
+}
